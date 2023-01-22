@@ -12,6 +12,8 @@ class GameScene: SKScene {
 
     var slotMachine:SlotMachine?
     var slots:Slots?
+    var spinButton:SpinButton?
+
 
     override func sceneDidLoad() {
 
@@ -19,8 +21,12 @@ class GameScene: SKScene {
         backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
         slotMachine=SlotMachine()
         slots = Slots()
+        spinButton = SpinButton(frame)
+
         addChild(slotMachine!)
         addChild(slots!)
+        addChild(spinButton!)
+
 
     }
     
