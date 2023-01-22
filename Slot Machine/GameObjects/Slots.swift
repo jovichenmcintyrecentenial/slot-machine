@@ -1,5 +1,5 @@
 //
-//  SlotMachine.swift
+//  Slots.swift
 //  Slot Machine
 //
 //  Created by Jovi on 22/01/2023.
@@ -9,11 +9,11 @@ import GameplayKit
 import SpriteKit
 
 
-class SlotMachine:GameObject{
+class Slots:GameObject{
 
     
     init() {
-        super.init(imageString: "slot-machine", initalScale: 0.75)
+        super.init(imageString: "slots", initalScale: 1.5)
         start()
         reset()
     }
@@ -26,7 +26,7 @@ class SlotMachine:GameObject{
     }
     
     override func reset() {
-        zPosition = 10
+        zPosition = 0
     }
     
 
