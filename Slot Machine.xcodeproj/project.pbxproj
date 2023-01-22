@@ -14,6 +14,8 @@
 		988EDB3E297DC43500840289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB3C297DC43500840289 /* Main.storyboard */; };
 		988EDB40297DC43600840289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB3F297DC43600840289 /* Assets.xcassets */; };
 		988EDB43297DC43600840289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB41297DC43600840289 /* LaunchScreen.storyboard */; };
+		988EDB4D297DC63400840289 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB4B297DC63400840289 /* GameObject.swift */; };
+		988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB4C297DC63400840289 /* GameObjectProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		988EDB3D297DC43500840289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		988EDB3F297DC43600840289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988EDB42297DC43600840289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		988EDB4B297DC63400840289 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		988EDB4C297DC63400840289 /* GameObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObjectProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		988EDB31297DC43500840289 /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				988EDB4A297DC5F800840289 /* GameObjects */,
+				988EDB49297DC5E500840289 /* Core */,
 				988EDB32297DC43500840289 /* AppDelegate.swift */,
 				988EDB34297DC43500840289 /* GameScene.sks */,
 				988EDB38297DC43500840289 /* GameScene.swift */,
@@ -66,6 +72,22 @@
 				988EDB41297DC43600840289 /* LaunchScreen.storyboard */,
 			);
 			path = "Slot Machine";
+			sourceTree = "<group>";
+		};
+		988EDB49297DC5E500840289 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				988EDB4B297DC63400840289 /* GameObject.swift */,
+				988EDB4C297DC63400840289 /* GameObjectProtocol.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		988EDB4A297DC5F800840289 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988EDB4D297DC63400840289 /* GameObject.swift in Sources */,
 				988EDB39297DC43500840289 /* GameScene.swift in Sources */,
 				988EDB3B297DC43500840289 /* GameViewController.swift in Sources */,
+				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
