@@ -10,10 +10,14 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-    
+    var slotMachine:SlotMachine?
+
     override func sceneDidLoad() {
 
-    
+        name = "GAME"
+        backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
+        slotMachine=SlotMachine()
+        addChild(slotMachine!)
     }
     
     

@@ -16,21 +16,12 @@ class GameObject : SKSpriteNode,GameObjectProtocol {
     func update() {
         
     }
-    
-    func checkBounds() {
-        
-    }
-    
+
     
     //public instance
-    var horizontalSpeed:CGFloat?
-    var verticalSpeed:CGFloat?
     var width:CGFloat?
     var height:CGFloat?
-    var halfHeight:CGFloat?
-    var halfWidth:CGFloat?
     var scale:CGFloat?
-    var isColliding:Bool?
     var randomSource:GKARC4RandomSource?
     var randomDist:GKRandomDistribution?
     
@@ -48,9 +39,6 @@ class GameObject : SKSpriteNode,GameObjectProtocol {
         setScale(scale!)
         width = texture.size().width*scale!
         height = texture.size().height*scale!
-        halfHeight = height!
-        halfWidth = width!
-        isColliding = false
         name = imageString
         randomSource = GKARC4RandomSource()
         

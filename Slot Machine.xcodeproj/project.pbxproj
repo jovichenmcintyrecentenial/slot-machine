@@ -16,6 +16,7 @@
 		988EDB43297DC43600840289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB41297DC43600840289 /* LaunchScreen.storyboard */; };
 		988EDB4D297DC63400840289 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB4B297DC63400840289 /* GameObject.swift */; };
 		988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB4C297DC63400840289 /* GameObjectProtocol.swift */; };
+		988EDB50297DC68A00840289 /* SlotMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB4F297DC68A00840289 /* SlotMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		988EDB42297DC43600840289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		988EDB4B297DC63400840289 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		988EDB4C297DC63400840289 /* GameObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObjectProtocol.swift; sourceTree = "<group>"; };
+		988EDB4F297DC68A00840289 /* SlotMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		988EDB4A297DC5F800840289 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				988EDB4F297DC68A00840289 /* SlotMachine.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				988EDB3B297DC43500840289 /* GameViewController.swift in Sources */,
 				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
+				988EDB50297DC68A00840289 /* SlotMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
