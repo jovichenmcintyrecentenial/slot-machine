@@ -41,10 +41,13 @@ class Slots:GameObject{
     }
     
     override func start() {
-  
+        for slotColumn in slotColums{
+            slotColumn.update()
+        }
     }
     
     override func update() {
+        
     }
     
     override func reset() {

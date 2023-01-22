@@ -28,6 +28,7 @@ class SlotMachine:GameObject{
     }
     
     override func update() {
+    
     }
     
     override func reset() {
