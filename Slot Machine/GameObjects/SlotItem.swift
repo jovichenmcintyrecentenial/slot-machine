@@ -1,26 +1,19 @@
 //
-//  SlotMachine.swift
+//  SlotItem.swift
 //  Slot Machine
 //
 //  Created by Jovi on 22/01/2023.
 //
 
-import GameplayKit
-import SpriteKit
+import Foundation
 
-
-class SlotMachine:GameObject{
-//    var slots:Slots?
+class SlotItem:GameObject{
 
     
-    init() {
-        super.init(imageString: "slot-machine", initalScale: 0.75)
-        zPosition = 10
-
+    init(itemName:String) {
+        super.init(imageString: itemName, initalScale:1.2)
         start()
         reset()
-//        slots = Slots()
-//        addChild(slots!)
     }
     
     override func start() {
@@ -31,7 +24,7 @@ class SlotMachine:GameObject{
     }
     
     override func reset() {
-        zPosition = 100
+        zPosition = 3
     }
     
 
