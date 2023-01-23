@@ -11,7 +11,7 @@ class SlotItem:GameObject{
 
     
     init(itemName:String) {
-        super.init(imageString: itemName, initalScale:1.2)
+        super.init(imageString: itemName, initalScale:0.60)
         start()
         reset()
     }
