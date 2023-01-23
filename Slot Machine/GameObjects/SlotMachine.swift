@@ -26,11 +26,13 @@ class SlotMachine:GameObject{
         jackpotNode = GameFontObject(fontSize: 50)
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
-
+        
+        //set labels value
         jackpotNode?.text = "$\(jackpot)"
         balanceNode?.text = "BAL: $\(balance)"
         betAmountNode?.text = "BET: $\(betAmount)"
         
+        //add nodes to slot machine object
         addChild(jackpotNode!)
         addChild(balanceNode!)
         addChild(betAmountNode!)
@@ -48,6 +50,7 @@ class SlotMachine:GameObject{
     
     override func reset() {
         zPosition = 100
+        //position labels on slot machine
         jackpotNode?.position.y = (jackpotNode!.position.y) + (texture!.size().height/2.0) - (texture!.size().height/4.2)
         
         balanceNode?.position.y = (balanceNode!.position.y) - (texture!.size().height/2.0) + (texture!.size().height/5.1)
