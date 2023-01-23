@@ -11,16 +11,31 @@ import SpriteKit
 
 class SlotMachine:GameObject{
 //    var slots:Slots?
+    var balance:Int = 100000
+    var betAmount:Int = 10
+    var jackpot:Int = 200000
+    var balanceNode:GameFontObject?
+    var jackpotNode:GameFontObject?
+    var betAmountNode:GameFontObject?
 
-    
     init() {
         super.init(imageString: "slot-machine", initalScale: 0.75)
+        
         zPosition = 10
-
         start()
+        jackpotNode = GameFontObject(fontSize: 50)
+        balanceNode = GameFontObject(fontSize: 40)
+        betAmountNode = GameFontObject(fontSize: 40)
+
+        jackpotNode?.text = "$\(jackpot)"
+        balanceNode?.text = "BAL: $\(balance)"
+        betAmountNode?.text = "BET: $\(betAmount)"
+        
+        addChild(jackpotNode!)
+        addChild(balanceNode!)
+        addChild(betAmountNode!)
+
         reset()
-//        slots = Slots()
-//        addChild(slots!)
     }
     
     override func start() {
@@ -33,6 +48,14 @@ class SlotMachine:GameObject{
     
     override func reset() {
         zPosition = 100
+        jackpotNode?.position.y = (jackpotNode!.position.y) + (texture!.size().height/2.0) - (texture!.size().height/4.2)
+        
+        balanceNode?.position.y = (balanceNode!.position.y) - (texture!.size().height/2.0) + (texture!.size().height/5.1)
+        balanceNode?.position.x = position.x + (texture!.size().width)/4.2
+
+        betAmountNode?.position.y = (betAmountNode!.position.y) - (texture!.size().height/2.0) + (texture!.size().height/5.1)
+        betAmountNode?.position.x = ((frame.width/2) * -1)+frame.width*0.12
+        
     }
     
 

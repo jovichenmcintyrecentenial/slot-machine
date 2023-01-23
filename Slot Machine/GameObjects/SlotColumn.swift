@@ -12,7 +12,8 @@ class SlotColumn{
     
     //use to clipp image from view when not in slot machine display
     var upperBoundCutOff:CGFloat = 100
-    var lowerBoundCutOff:CGFloat = -100
+    var lowerBoundCutOff:CGFloat = -150
+    var resetPoint = -140
 
    var items:[SlotItem] = []
     
@@ -25,9 +26,6 @@ class SlotColumn{
         items.append(SlotItem(itemName: "strawberry"))
         items.append(SlotItem(itemName: "grape"))
 
-
-        
-       
     }
     
     func update(){
@@ -39,6 +37,7 @@ class SlotColumn{
             else{
                 item.isHidden = false
             }
+            
         }
     }
     

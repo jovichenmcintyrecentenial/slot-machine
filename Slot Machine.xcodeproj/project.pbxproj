@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		98097137297DE5E500CD4803 /* SpinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98097136297DE5E500CD4803 /* SpinButton.swift */; };
+		9809713D297DF27E00CD4803 /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */; };
+		9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809713E297E01A600CD4803 /* GameFontObject.swift */; };
 		988EDB33297DC43500840289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB32297DC43500840289 /* AppDelegate.swift */; };
 		988EDB35297DC43500840289 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB34297DC43500840289 /* GameScene.sks */; };
 		988EDB39297DC43500840289 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB38297DC43500840289 /* GameScene.swift */; };
@@ -25,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		98097136297DE5E500CD4803 /* SpinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButton.swift; sourceTree = "<group>"; };
+		9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
+		9809713C297DF0AB00CD4803 /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9809713E297E01A600CD4803 /* GameFontObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFontObject.swift; sourceTree = "<group>"; };
 		988EDB2F297DC43500840289 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		988EDB32297DC43500840289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988EDB34297DC43500840289 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -52,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98097138297DEE5000CD4803 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				98097139297DEE5B00CD4803 /* fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		98097139297DEE5B00CD4803 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		988EDB26297DC43500840289 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +92,8 @@
 		988EDB31297DC43500840289 /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				9809713C297DF0AB00CD4803 /* Slot-Machine-Info.plist */,
+				98097138297DEE5000CD4803 /* Assets */,
 				988EDB4A297DC5F800840289 /* GameObjects */,
 				988EDB49297DC5E500840289 /* Core */,
 				988EDB32297DC43500840289 /* AppDelegate.swift */,
@@ -89,6 +112,7 @@
 			children = (
 				988EDB4B297DC63400840289 /* GameObject.swift */,
 				988EDB4C297DC63400840289 /* GameObjectProtocol.swift */,
+				9809713E297E01A600CD4803 /* GameFontObject.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -163,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9809713D297DF27E00CD4803 /* Baloo-Regular.ttf in Resources */,
 				988EDB3E297DC43500840289 /* Main.storyboard in Resources */,
 				988EDB35297DC43500840289 /* GameScene.sks in Resources */,
 				988EDB40297DC43600840289 /* Assets.xcassets in Resources */,
@@ -180,6 +205,7 @@
 				988EDB4D297DC63400840289 /* GameObject.swift in Sources */,
 				988EDB39297DC43500840289 /* GameScene.swift in Sources */,
 				988EDB3B297DC43500840289 /* GameViewController.swift in Sources */,
+				9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */,
 				988EDB54297DD2D000840289 /* SlotColumn.swift in Sources */,
 				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
@@ -334,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -361,6 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
