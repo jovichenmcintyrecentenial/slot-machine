@@ -25,6 +25,11 @@ class SlotColumn{
         items.append(SlotItem(itemName: "bell"))
         items.append(SlotItem(itemName: "strawberry"))
         items.append(SlotItem(itemName: "grape"))
+        items.append(SlotItem(itemName: "orange"))
+        items.append(SlotItem(itemName: "strawberry"))
+        items.append(SlotItem(itemName: "melon"))
+        items.append(SlotItem(itemName: "lemon"))
+        items.append(SlotItem(itemName: "somefruitidk"))
 
     }
     
