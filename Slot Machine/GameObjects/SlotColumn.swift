@@ -16,10 +16,12 @@ class SlotColumn{
     var resetCutOffPoint:CGFloat = -10000
     var restPoint:CGFloat = 10000
     
+    var isSpinning = false
+    
     //current speed
-    var verticalSpeed:CGFloat = -10
+    var verticalSpeed:CGFloat = 0
     //max speed wheels can go
-    var vertialMaxSpeed:CGFloat = 25
+    var vertialMaxSpeed:CGFloat = 20
     
     var items:[SlotItem] = []
     
@@ -42,7 +44,7 @@ class SlotColumn{
     func update(){
         
         //use to simulate acceleration
-        if(verticalSpeed < vertialMaxSpeed){
+        if(verticalSpeed < vertialMaxSpeed && isSpinning){
             verticalSpeed = verticalSpeed + 1
         }
     

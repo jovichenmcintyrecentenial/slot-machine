@@ -52,6 +52,14 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            let node = self.nodes(at: location).first
+            if node == spinButton {
+                // Perform your action
+                slots?.spin()
+            }
+        }
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     

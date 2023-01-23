@@ -54,6 +54,20 @@ class Slots:GameObject{
         reset()
     }
     
+    func spin(){
+        DispatchQueue.global().async { [weak self] in
+            //trigger spin
+            if self != nil {
+                for slotColumn in self!.slotColums{
+                    slotColumn.verticalSpeed = -10
+                    slotColumn.isSpinning = true
+                    usleep(50_000)
+                    
+                }
+            }
+        }
+    }
+    
     override func start() {
         //run function to hide slot items that has pass speficied bounds
         for slotColumn in slotColums{
