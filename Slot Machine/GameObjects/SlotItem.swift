@@ -9,8 +9,9 @@ import Foundation
 
 class SlotItem:GameObject{
 
-    
-    init(itemName:String) {
+    var slot:Slot
+    init(itemName:String,slot:Slot) {
+        self.slot = slot
         super.init(imageString: itemName, initalScale:0.60)
         start()
         reset()

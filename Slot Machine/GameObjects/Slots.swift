@@ -8,6 +8,8 @@
 import GameplayKit
 import SpriteKit
 
+enum Slot {case blank,lemon,orange,strawberry,bell,melon,seven,cherry,grape}
+
 //todo: make number 117 and 98 relative to screen deminison
 class Slots:GameObject{
     
@@ -62,6 +64,23 @@ class Slots:GameObject{
                     slotColumn.verticalSpeed = -10
                     slotColumn.isSpinning = true
                     usleep(50_000)
+                    
+                }
+            }
+        }
+    }
+    
+    func stop(slots:[Slot]){
+        DispatchQueue.global().async { [weak self] in
+            usleep(2000_000)
+
+            //trigger stop
+            if self != nil {
+                var index = 0
+                for slotColumn in self!.slotColums{
+                    slotColumn.stop(at: slots[index])
+                    usleep(550_000)
+                    index += 1
                     
                 }
             }

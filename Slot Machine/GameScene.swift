@@ -11,8 +11,6 @@ import GameplayKit
 class GameScene: SKScene {
 
     var slotMachine:SlotMachine?
-    var slots:Slots?
-    var spinButton:SpinButton?
 
 
     override func sceneDidLoad() {
@@ -20,12 +18,13 @@ class GameScene: SKScene {
         name = "GAME"
         backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
         slotMachine=SlotMachine()
-        slots = Slots()
-        spinButton = SpinButton(frame)
+        
+        slotMachine?.slots = Slots()
+        slotMachine?.spinButton = SpinButton(frame)
 
         addChild(slotMachine!)
-        addChild(slots!)
-        addChild(spinButton!)
+        addChild((slotMachine?.slots!)!)
+        addChild(slotMachine!.spinButton!)
 
 
     }
@@ -55,9 +54,9 @@ class GameScene: SKScene {
         if let touch = touches.first {
             let location = touch.location(in: self)
             let node = self.nodes(at: location).first
-            if node == spinButton {
+            if node == slotMachine!.spinButton {
                 // Perform your action
-                slots?.spin()
+                slotMachine?.spin()
             }
         }
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
@@ -69,6 +68,6 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        slots?.update()
+        slotMachine?.slots?.update()
     }
 }

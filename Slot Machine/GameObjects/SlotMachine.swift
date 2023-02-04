@@ -10,13 +10,53 @@ import SpriteKit
 
 
 class SlotMachine:GameObject{
-//    var slots:Slots?
-    var balance:Int = 100000
     var betAmount:Int = 10
-    var jackpot:Int = 200000
+    var jackpot:Int = 5000
     var balanceNode:GameFontObject?
     var jackpotNode:GameFontObject?
     var betAmountNode:GameFontObject?
+    var slots:Slots?
+    var spinButton:SpinButton?
+
+    
+    var playerMoney = 1000
+    var winnings = 0
+    var turn = 0
+    var playerBet = 0
+    var winNumber = 0
+    var lossNumber = 0
+    var winRatio = 0
+    var grapes = 0
+    var melons = 0
+    var oranges = 0
+    var cherries = 0
+    var strawberry = 0
+    var bells = 0
+    var sevens = 0
+    var blanks = 0
+    
+    var betLine:[Slot] = [Slot.blank, Slot.blank, Slot.blank]
+    var outCome = [0, 0, 0]
+    
+    /* Check to see if the player won the jackpot */
+    func checkJackPot() {
+        
+        /* compare two random values */
+        var jackPotTry = Int.random(in: 0..<51)
+        var jackPotWin = Int.random(in: 0..<51)
+        if (jackPotTry == jackPotWin) {
+            playerMoney += jackpot
+            jackpot = 1000
+        }
+    }
+    
+    func updateLabels(){
+        //set labels value
+        jackpotNode?.text = "$\(jackpot)"
+        balanceNode?.text = "BAL: $\(playerMoney)"
+        betAmountNode?.text = "BET: $\(betAmount)"
+        
+    }
 
     init() {
         super.init(imageString: "slot-machine", initalScale: 0.75)
@@ -26,11 +66,8 @@ class SlotMachine:GameObject{
         jackpotNode = GameFontObject(fontSize: 50)
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
-        
-        //set labels value
-        jackpotNode?.text = "$\(jackpot)"
-        balanceNode?.text = "BAL: $\(balance)"
-        betAmountNode?.text = "BET: $\(betAmount)"
+      
+        updateLabels()
         
         //add nodes to slot machine object
         addChild(jackpotNode!)
@@ -46,6 +83,15 @@ class SlotMachine:GameObject{
     
     override func update() {
     
+    }
+    
+    func spin(){
+        reels()
+        print(betLine)
+        slots?.spin()
+        slots?.stop(slots: betLine)
+        determineWinnings()
+        updateLabels()
     }
     
     override func reset() {
@@ -64,5 +110,151 @@ class SlotMachine:GameObject{
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    /* Utility function to reset the player stats */
+    func resetAll() {
+        playerMoney = 1000
+        winnings = 0
+        jackpot = 5000
+        turn = 0
+        playerBet = 0
+        winNumber = 0
+        lossNumber = 0
+        winRatio = 0
+        
+        betLine = [Slot.blank, Slot.blank, Slot.blank]
+        outCome = [0, 0, 0]
+    }
+    
+    /* Utility function to reset all fruit tallies */
+    func resetFruitTally() {
+        grapes = 0
+        melons = 0
+        oranges = 0
+        cherries = 0
+        strawberry = 0
+        bells = 0
+        sevens = 0
+        blanks = 0
+    }
+    
+    /* Utility function to check if a value falls within a range of bounds */
+    func checkRange(_ value:Int, _ lowerBounds:Int,_ upperBounds:Int)->Int {
+        if (value >= lowerBounds && value <= upperBounds)
+        {
+            return value
+        }
+        else {
+            return -1
+        }
+    }
+    
+    /* This function calculates the player's winnings, if any */
+    func determineWinnings()
+    {
+        if (blanks == 0)
+        {
+            if (grapes == 3) {
+                winnings = playerBet * 10
+            }
+            else if(melons == 3) {
+                winnings = playerBet * 20
+            }
+            else if (oranges == 3) {
+                winnings = playerBet * 30
+            }
+            else if (cherries == 3) {
+                winnings = playerBet * 40
+            }
+            else if (strawberry == 3) {
+                winnings = playerBet * 50
+            }
+            else if (bells == 3) {
+                winnings = playerBet * 75
+            }
+            else if (sevens == 3) {
+                winnings = playerBet * 100
+            }
+            else if (grapes == 2) {
+                winnings = playerBet * 2
+            }
+            else if (melons == 2) {
+                winnings = playerBet * 2
+            }
+            else if (oranges == 2) {
+                winnings = playerBet * 3
+            }
+            else if (cherries == 2) {
+                winnings = playerBet * 4
+            }
+            else if (strawberry == 2) {
+                winnings = playerBet * 5
+            }
+            else if (bells == 2) {
+                winnings = playerBet * 10
+            }
+            else if (sevens == 2) {
+                winnings = playerBet * 20
+            }
+            else if (sevens == 1) {
+                winnings = playerBet * 5
+            }
+            else {
+                winnings = playerBet * 1
+            }
+            winNumber += 1
+        }
+        else
+        {
+            lossNumber += 1
+            jackpot += 5
+        }
+        
+    }
+    
+    /* When this function is called it determines the betLine results.
+    e.g. Bar - Orange - Banana */
+    func reels() {
+
+        for spin in 0...2 {
+            outCome[spin] = Int.random(in: 1..<65)
+            switch (outCome[spin]) {
+                case checkRange(outCome[spin], 1, 27):  // 41.5% probability
+                    betLine[spin] = Slot.blank
+                    blanks += 1
+                    break
+                case checkRange(outCome[spin], 28, 37): // 15.4% probability
+                    betLine[spin] = Slot.grape
+                    grapes += 1
+                    break
+                case checkRange(outCome[spin], 38, 46): // 13.8% probability
+                betLine[spin] = Slot.melon
+                    melons += 1
+                    break
+                case checkRange(outCome[spin], 47, 54): // 12.3% probability
+                    betLine[spin] = Slot.orange
+                    oranges += 1
+                    break
+                case checkRange(outCome[spin], 55, 59): //  7.7% probability
+                    betLine[spin] = Slot.cherry
+                    cherries += 1
+                    break
+                case checkRange(outCome[spin], 60, 62): //  4.6% probability
+                    betLine[spin] = Slot.strawberry
+                    strawberry += 1
+                    break
+                case checkRange(outCome[spin], 63, 64): //  3.1% probability
+                    betLine[spin] = Slot.bell
+                    bells += 1
+                    break
+                case checkRange(outCome[spin], 65, 65): //  1.5% probability
+                    betLine[spin] = Slot.seven
+                    sevens += 1
+                    break
+                default:
+                    print()
+            }
+        }
     }
 }

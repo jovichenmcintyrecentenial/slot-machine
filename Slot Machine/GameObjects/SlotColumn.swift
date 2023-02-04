@@ -15,7 +15,7 @@ class SlotColumn{
     var lowerBoundCutOff:CGFloat = -200
     var resetCutOffPoint:CGFloat = -10000
     var restPoint:CGFloat = 10000
-    
+    var stopSlot:Slot? = nil
     var isSpinning = false
     
     //current speed
@@ -24,22 +24,26 @@ class SlotColumn{
     var vertialMaxSpeed:CGFloat = 20
     
     var items:[SlotItem] = []
-    
+
     init() {
         //load different slot items
-        items.append(SlotItem(itemName: "cherry"))
-        items.append(SlotItem(itemName: "seven"))
-        items.append(SlotItem(itemName: "melon"))
-        items.append(SlotItem(itemName: "bell"))
-        items.append(SlotItem(itemName: "strawberry"))
-        items.append(SlotItem(itemName: "grape"))
-        items.append(SlotItem(itemName: "orange"))
-        items.append(SlotItem(itemName: "strawberry"))
-        items.append(SlotItem(itemName: "melon"))
-        items.append(SlotItem(itemName: "lemon"))
-        items.append(SlotItem(itemName: "somefruitidk"))
+        items.append(SlotItem(itemName: "cherry",slot: Slot.cherry))
+        items.append(SlotItem(itemName: "seven",slot: Slot.seven))
+        items.append(SlotItem(itemName: "melon",slot: Slot.melon))
+        items.append(SlotItem(itemName: "bell",slot: Slot.bell))
+        items.append(SlotItem(itemName: "strawberry",slot: Slot.strawberry))
+        items.append(SlotItem(itemName: "grape",slot: Slot.grape))
+        items.append(SlotItem(itemName: "orange",slot: Slot.orange))
+        items.append(SlotItem(itemName: "lemon",slot: Slot.lemon))
+        items.append(SlotItem(itemName: "blank",slot: Slot.blank))
 
     }
+    
+    func stop(at:Slot){
+        stopSlot = at
+    }
+    
+
     
     func update(){
         
@@ -66,6 +70,13 @@ class SlotColumn{
             if(item.position.y < resetCutOffPoint){
                 item.position.y = restPoint
             }
+            
+            //check if should stop then stop at betline position
+            if(stopSlot != nil && item.slot == stopSlot && item.position.y >= 0 && item.position.y <= 20){
+                isSpinning = false
+                verticalSpeed = 0
+            }
+            
             index = index + 1
         }
     }
