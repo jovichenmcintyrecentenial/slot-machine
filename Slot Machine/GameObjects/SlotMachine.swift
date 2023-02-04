@@ -20,11 +20,8 @@ class SlotMachine:GameObject{
 
     
     var playerMoney = 1000
-    var winnings = 0
     var turn = 0
-    var playerBet = 0
-    var winNumber = 0
-    var lossNumber = 0
+    var playerBet = 10
     var winRatio = 0
     var grapes = 0
     var melons = 0
@@ -86,6 +83,7 @@ class SlotMachine:GameObject{
     }
     
     func spin(){
+        resetMachine()
         reels()
         print(betLine)
         slots?.spin()
@@ -115,12 +113,9 @@ class SlotMachine:GameObject{
     /* Utility function to reset the player stats */
     func resetAll() {
         playerMoney = 1000
-        winnings = 0
         jackpot = 5000
         turn = 0
         playerBet = 0
-        winNumber = 0
-        lossNumber = 0
         winRatio = 0
         
         betLine = [Slot.blank, Slot.blank, Slot.blank]
@@ -128,7 +123,7 @@ class SlotMachine:GameObject{
     }
     
     /* Utility function to reset all fruit tallies */
-    func resetFruitTally() {
+    func resetMachine() {
         grapes = 0
         melons = 0
         oranges = 0
@@ -137,6 +132,8 @@ class SlotMachine:GameObject{
         bells = 0
         sevens = 0
         blanks = 0
+        betLine = [Slot.blank, Slot.blank, Slot.blank]
+        outCome = [0, 0, 0]
     }
     
     /* Utility function to check if a value falls within a range of bounds */
@@ -153,6 +150,8 @@ class SlotMachine:GameObject{
     /* This function calculates the player's winnings, if any */
     func determineWinnings()
     {
+        var winnings = 0
+
         if (blanks == 0)
         {
             if (grapes == 3) {
@@ -203,13 +202,15 @@ class SlotMachine:GameObject{
             else {
                 winnings = playerBet * 1
             }
-            winNumber += 1
+            playerMoney += winnings
+            checkJackPot()
         }
         else
         {
-            lossNumber += 1
+            playerMoney -= playerBet
             jackpot += 5
         }
+        
         
     }
     

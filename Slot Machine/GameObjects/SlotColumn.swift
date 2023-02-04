@@ -72,7 +72,7 @@ class SlotColumn{
             }
             
             //check if should stop then stop at betline position
-            if(stopSlot != nil && item.slot == stopSlot && item.position.y >= 0 && item.position.y <= 20){
+            if(stopSlot != nil && item.slot == stopSlot && item.position.y >= -10 && item.position.y <= 10){
                 isSpinning = false
                 verticalSpeed = 0
             }

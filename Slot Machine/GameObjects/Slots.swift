@@ -23,6 +23,13 @@ class Slots:GameObject{
         slotColums.append(SlotColumn())
         slotColums.append(SlotColumn())
         
+       adjustSlots(add: true)
+
+        start()
+        reset()
+    }
+    
+    func adjustSlots(add:Bool = false){
         //offset column to negative space for first slot
         var colums:CGFloat = -1
         for slotColumn in slotColums{
@@ -43,7 +50,9 @@ class Slots:GameObject{
                 }
                 
                 //add slot to parent
-                addChild(item)
+                if(add){
+                    addChild(item)
+                }
                 //shift row
                 rows = rows + 1
                 index = index + 1
@@ -51,16 +60,17 @@ class Slots:GameObject{
             //shift column
             colums = colums + 1
         }
-
-        start()
-        reset()
     }
     
     func spin(){
         DispatchQueue.global().async { [weak self] in
+
             //trigger spin
             if self != nil {
+//                self!.adjustSlots()
+
                 for slotColumn in self!.slotColums{
+                    slotColumn.stopSlot = nil
                     slotColumn.verticalSpeed = -10
                     slotColumn.isSpinning = true
                     usleep(50_000)
@@ -72,7 +82,7 @@ class Slots:GameObject{
     
     func stop(slots:[Slot]){
         DispatchQueue.global().async { [weak self] in
-            usleep(2000_000)
+            usleep(5000_000)
 
             //trigger stop
             if self != nil {
