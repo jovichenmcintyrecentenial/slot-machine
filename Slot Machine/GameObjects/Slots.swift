@@ -80,9 +80,9 @@ class Slots:GameObject{
         }
     }
     
-    func stop(slots:[Slot]){
+    func stop(slots:[Slot],onComplete:@escaping ()->Void){
         DispatchQueue.global().async { [weak self] in
-            usleep(5000_000)
+            usleep(2000_000)
 
             //trigger stop
             if self != nil {
@@ -93,6 +93,8 @@ class Slots:GameObject{
                     index += 1
                     
                 }
+                
+                onComplete()
             }
         }
     }

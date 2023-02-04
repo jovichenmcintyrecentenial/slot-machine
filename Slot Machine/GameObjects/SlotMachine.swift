@@ -87,9 +87,13 @@ class SlotMachine:GameObject{
         reels()
         print(betLine)
         slots?.spin()
-        slots?.stop(slots: betLine)
-        determineWinnings()
-        updateLabels()
+        slots?.stop(slots: betLine,onComplete: { [weak self] in
+            if(self != nil){
+                self!.determineWinnings()
+                self!.updateLabels()
+            }
+        })
+      
     }
     
     override func reset() {
