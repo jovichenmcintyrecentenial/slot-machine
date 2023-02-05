@@ -19,9 +19,9 @@ class Slots:GameObject{
         super.init(imageString: "slots", initalScale:1.5)
         
         //create 3 column objects for each slot
-        slotColums.append(SlotColumn())
-        slotColums.append(SlotColumn())
-        slotColums.append(SlotColumn())
+        slotColums.append(SlotColumn(columnIndex: 0))
+        slotColums.append(SlotColumn(columnIndex: 1))
+        slotColums.append(SlotColumn(columnIndex: 2))
         
        adjustSlots(add: true)
 
@@ -51,6 +51,7 @@ class Slots:GameObject{
                 
                 //add slot to parent
                 if(add){
+                    slotColumn.positions.append(CGPoint(x: item.position.x , y: item.position.y))
                     addChild(item)
                 }
                 //shift row
@@ -67,13 +68,13 @@ class Slots:GameObject{
 
             //trigger spin
             if self != nil {
-//                self!.adjustSlots()
 
-                for slotColumn in self!.slotColums{
+                for slotColumn in self!.slotColums {
                     slotColumn.stopSlot = nil
                     slotColumn.verticalSpeed = -10
                     slotColumn.isSpinning = true
                     usleep(50_000)
+
                     
                 }
             }
@@ -82,14 +83,21 @@ class Slots:GameObject{
     
     func stop(slots:[Slot],onComplete:@escaping ()->Void){
         DispatchQueue.global().async { [weak self] in
-            usleep(2000_000)
+       
 
             //trigger stop
             if self != nil {
+                usleep(1500_000)
+                self!.adjustSlots(add: false)
+
+
+                usleep(500_000)
                 var index = 0
                 for slotColumn in self!.slotColums{
                     slotColumn.stop(at: slots[index])
+
                     usleep(550_000)
+
                     index += 1
                     
                 }

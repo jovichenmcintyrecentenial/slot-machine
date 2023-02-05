@@ -17,6 +17,11 @@ class SlotColumn{
     var restPoint:CGFloat = 10000
     var stopSlot:Slot? = nil
     var isSpinning = false
+    var columnIndex = 0
+    
+    //varible to store calculated postions of slot items
+    var positions:[CGPoint] = []
+
     
     //current speed
     var verticalSpeed:CGFloat = 0
@@ -25,7 +30,8 @@ class SlotColumn{
     
     var items:[SlotItem] = []
 
-    init() {
+    init(columnIndex:Int) {
+        self.columnIndex = columnIndex
         //load different slot items
         items.append(SlotItem(itemName: "cherry",slot: Slot.cherry))
         items.append(SlotItem(itemName: "seven",slot: Slot.seven))
@@ -53,6 +59,7 @@ class SlotColumn{
         }
     
         var index = 0
+
         for item in items{
             
             //this check is use to make sprite invisible when the pass a certain point on screen
@@ -75,6 +82,27 @@ class SlotColumn{
             if(stopSlot != nil && item.slot == stopSlot && item.position.y >= -10 && item.position.y <= 10){
                 isSpinning = false
                 verticalSpeed = 0
+                
+                //get previous and next index
+                var previousIndex = index - 1
+                var nextIndex  = index + 1
+                
+                if(previousIndex < 0){
+                    previousIndex = items.count-1
+                }
+                
+                if(nextIndex > items.count-1){
+                    nextIndex = 0
+                }
+                
+                //realign 3 currently visibile slot items on stop based on original postions
+                items[previousIndex].position.y = positions[2].y
+                item.position.y = -5
+                items[nextIndex].position.y = positions[4].y
+
+                stopSlot = nil
+
+
             }
             
             index = index + 1
