@@ -67,29 +67,34 @@ class GameScene: SKScene {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
     }
     
+    //touch events
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
             let node = self.nodes(at: location).first
             if node == slotMachine!.spinButton && slotMachine!.spinButton!.isEnabled {
-                // Perform your action
+                // Perform your spin reels
                 slotMachine?.spin()
             }
             if node == slotMachine!.betUpButton && !slotMachine!.slots!.isSpinning {
-                // Perform your action
+                // Perform your bet up
                 slotMachine?.betUp()
             }
             if node == slotMachine!.betDownButton && !slotMachine!.slots!.isSpinning  {
-                // Perform your action
+                // Perform your bet down
                 slotMachine?.betDown()
             }
             if node == slotMachine!.betMaxButton && !slotMachine!.slots!.isSpinning  {
-                // Perform your action
+                // Perform your bet max
                 slotMachine?.betMax()
             }
             if node == slotMachine!.resetButton && !slotMachine!.slots!.isSpinning  {
-                // Perform your action
+                // Perform your reset
                 slotMachine?.restartGame()
+            }
+            if node == quitButton && !slotMachine!.slots!.isSpinning  {
+                // Perform your reset
+                exit(0);
             }
         }
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
