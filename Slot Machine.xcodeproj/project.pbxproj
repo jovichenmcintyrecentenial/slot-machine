@@ -10,6 +10,7 @@
 		98097137297DE5E500CD4803 /* SpinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98097136297DE5E500CD4803 /* SpinButton.swift */; };
 		9809713D297DF27E00CD4803 /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */; };
 		9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809713E297E01A600CD4803 /* GameFontObject.swift */; };
+		988E2764299055CD0091C3F2 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2763299055CD0091C3F2 /* Button.swift */; };
 		988EDB33297DC43500840289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB32297DC43500840289 /* AppDelegate.swift */; };
 		988EDB35297DC43500840289 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB34297DC43500840289 /* GameScene.sks */; };
 		988EDB39297DC43500840289 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB38297DC43500840289 /* GameScene.swift */; };
@@ -30,6 +31,7 @@
 		9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		9809713C297DF0AB00CD4803 /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9809713E297E01A600CD4803 /* GameFontObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFontObject.swift; sourceTree = "<group>"; };
+		988E2763299055CD0091C3F2 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		988EDB2F297DC43500840289 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		988EDB32297DC43500840289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988EDB34297DC43500840289 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				988EDB53297DD2D000840289 /* SlotColumn.swift */,
 				988EDB55297DD35800840289 /* SlotItem.swift */,
 				98097136297DE5E500CD4803 /* SpinButton.swift */,
+				988E2763299055CD0091C3F2 /* Button.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				988EDB54297DD2D000840289 /* SlotColumn.swift in Sources */,
 				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
+				988E2764299055CD0091C3F2 /* Button.swift in Sources */,
 				988EDB52297DCD7500840289 /* Slots.swift in Sources */,
 				988EDB56297DD35800840289 /* SlotItem.swift in Sources */,
 				988EDB50297DC68A00840289 /* SlotMachine.swift in Sources */,

@@ -10,13 +10,16 @@ import SpriteKit
 
 
 class SlotMachine:GameObject{
-    var betAmount:Int = 10
     var jackpot:Int = 5000
     var balanceNode:GameFontObject?
     var jackpotNode:GameFontObject?
     var betAmountNode:GameFontObject?
     var slots:Slots?
     var spinButton:SpinButton?
+    var betUpButton:Button?
+    var betDownButton:Button?
+    var betMaxButton:Button?
+    var resetButton:Button?
 
     
     var playerMoney = 1000
@@ -47,12 +50,23 @@ class SlotMachine:GameObject{
         }
     }
     
-    func updateLabels(){
+    func updateUI(){
         //set labels value
         jackpotNode?.text = "$\(jackpot)"
         balanceNode?.text = "BAL: $\(playerMoney)"
-        betAmountNode?.text = "BET: $\(betAmount)"
+        betAmountNode?.text = "BET: $\(playerBet)"
         
+        updateSpinButtonUI()
+        
+    }
+    
+    func updateSpinButtonUI(){
+        if(playerBet > playerMoney || playerMoney <= 0){
+            spinButton?.setAsDisable()
+        }
+        else{
+            spinButton?.setAsEnabled()
+        }
     }
 
     init() {
@@ -64,12 +78,13 @@ class SlotMachine:GameObject{
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
       
-        updateLabels()
+        updateUI()
         
         //add nodes to slot machine object
         addChild(jackpotNode!)
         addChild(balanceNode!)
         addChild(betAmountNode!)
+        
 
         reset()
     }
@@ -83,20 +98,34 @@ class SlotMachine:GameObject{
     }
     
     func spin(){
-        resetMachine()
-        reels()
-        print(betLine)
-        spinButton?.setAsDisable()
-        slots?.spin()
-        slots?.stop(slots: betLine,onComplete: { [weak self] in
-            if(self != nil){
-                self!.determineWinnings()
-                self!.updateLabels()
-                self!.spinButton?.setAsEnabled()
-
-            }
-        })
+            resetMachine()
+            reels()
+            print(betLine)
+            spinButton?.setAsDisable()
+            slots?.spin()
+            slots?.stop(slots: betLine,onComplete: { [weak self] in
+                if(self != nil){
+                    self!.determineWinnings()
+                    self!.updateUI()
+                    self!.updateSpinButtonUI()
+                    
+                }
+            })
+        
       
+    }
+    
+    func updateButtonPosition(){
+        self.betUpButton?.position.y = -1*self.frame.height/2.4
+        self.betDownButton?.position.y = -1*self.frame.height/2.4
+        self.betMaxButton?.position.y = -1*self.frame.height/2.4
+        self.resetButton?.position.y = -1*self.frame.height/2.4
+        
+        self.betDownButton?.position.x = -1*self.frame.width/7*1
+        self.betUpButton?.position.x = -1*self.frame.width/5*2
+        self.betMaxButton?.position.x = self.frame.width/7*1
+        self.resetButton?.position.x = self.frame.width/5*2
+
     }
     
     override func reset() {
@@ -108,7 +137,7 @@ class SlotMachine:GameObject{
         balanceNode?.position.x = position.x + (texture!.size().width)/4.2
 
         betAmountNode?.position.y = (betAmountNode!.position.y) - (texture!.size().height/2.0) + (texture!.size().height/5.1)
-        betAmountNode?.position.x = ((frame.width/2) * -1)+frame.width*0.12
+        betAmountNode?.position.x = ((frame.width/2) * -1)+frame.width*0.20
         
     }
     
@@ -131,6 +160,9 @@ class SlotMachine:GameObject{
     
     /* Utility function to reset all fruit tallies */
     func resetMachine() {
+        
+
+        
         grapes = 0
         melons = 0
         oranges = 0
@@ -141,6 +173,16 @@ class SlotMachine:GameObject{
         blanks = 0
         betLine = [Slot.blank, Slot.blank, Slot.blank]
         outCome = [0, 0, 0]
+
+    }
+    
+    func restartGame(){
+        playerBet = 10
+        playerMoney = 1000
+        jackpot = 5000
+        resetMachine()
+        slots?.adjustSlots(add: false)
+        updateUI()
     }
     
     /* Utility function to check if a value falls within a range of bounds */
@@ -264,5 +306,29 @@ class SlotMachine:GameObject{
                     print()
             }
         }
+    }
+    
+    func betUp(){
+        if(playerMoney >= playerBet+10){
+            playerBet += 10
+        }
+        updateUI()
+    }
+    
+    func betDown(){
+        if(playerMoney < playerBet){
+            playerBet = playerMoney 
+        }
+        if(playerBet > 10){
+            playerBet -= 10
+        }
+        updateUI()
+
+    }
+    
+    func betMax(){
+        playerBet = playerMoney
+        updateUI()
+
     }
 }

@@ -14,6 +14,7 @@ enum Slot {case blank,lemon,orange,strawberry,bell,melon,seven,cherry,grape}
 class Slots:GameObject{
     
     var slotColums:[SlotColumn] = []
+    var isSpinning:Bool = false
     
     init() {
         super.init(imageString: "slots", initalScale:1.5)
@@ -64,6 +65,7 @@ class Slots:GameObject{
     }
     
     func spin(){
+        isSpinning = true
         DispatchQueue.global().async { [weak self] in
 
             //trigger spin
@@ -103,6 +105,8 @@ class Slots:GameObject{
                 }
                 
                 onComplete()
+                self!.isSpinning = false
+
             }
         }
     }

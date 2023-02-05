@@ -33,12 +33,12 @@ class SlotColumn{
     init(columnIndex:Int) {
         self.columnIndex = columnIndex
         //load different slot items
+        items.append(SlotItem(itemName: "bell",slot: Slot.bell))
+        items.append(SlotItem(itemName: "melon",slot: Slot.melon))
         items.append(SlotItem(itemName: "cherry",slot: Slot.cherry))
         items.append(SlotItem(itemName: "seven",slot: Slot.seven))
-        items.append(SlotItem(itemName: "melon",slot: Slot.melon))
-        items.append(SlotItem(itemName: "bell",slot: Slot.bell))
-        items.append(SlotItem(itemName: "strawberry",slot: Slot.strawberry))
         items.append(SlotItem(itemName: "grape",slot: Slot.grape))
+        items.append(SlotItem(itemName: "strawberry",slot: Slot.strawberry))
         items.append(SlotItem(itemName: "orange",slot: Slot.orange))
         items.append(SlotItem(itemName: "lemon",slot: Slot.lemon))
         items.append(SlotItem(itemName: "blank",slot: Slot.blank))

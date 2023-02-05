@@ -21,10 +21,24 @@ class GameScene: SKScene {
         
         slotMachine?.slots = Slots()
         slotMachine?.spinButton = SpinButton(frame)
+        
+        slotMachine?.betUpButton = Button(frame)
+        slotMachine?.betDownButton = Button(frame)
+        slotMachine?.betMaxButton = Button(frame)
+        slotMachine?.resetButton = Button(frame)
+        
+
 
         addChild(slotMachine!)
         addChild((slotMachine?.slots!)!)
         addChild(slotMachine!.spinButton!)
+        
+        addChild(slotMachine!.betUpButton!)
+        addChild(slotMachine!.betDownButton!)
+        addChild(slotMachine!.betMaxButton!)
+        addChild(slotMachine!.resetButton!)
+        
+        slotMachine?.updateButtonPosition()
 
 
     }
@@ -57,6 +71,22 @@ class GameScene: SKScene {
             if node == slotMachine!.spinButton && slotMachine!.spinButton!.isEnabled {
                 // Perform your action
                 slotMachine?.spin()
+            }
+            if node == slotMachine!.betUpButton && !slotMachine!.slots!.isSpinning {
+                // Perform your action
+                slotMachine?.betUp()
+            }
+            if node == slotMachine!.betDownButton && !slotMachine!.slots!.isSpinning  {
+                // Perform your action
+                slotMachine?.betDown()
+            }
+            if node == slotMachine!.betMaxButton && !slotMachine!.slots!.isSpinning  {
+                // Perform your action
+                slotMachine?.betMax()
+            }
+            if node == slotMachine!.resetButton && !slotMachine!.slots!.isSpinning  {
+                // Perform your action
+                slotMachine?.restartGame()
             }
         }
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
