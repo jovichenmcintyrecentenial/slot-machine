@@ -18,29 +18,35 @@ class GameScene: SKScene {
 
         name = "GAME"
         backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
+        
+        //create slot machine button
         slotMachine=SlotMachine()
+        
+        //create quit button
         quitButton = QuitButton(frame)
         
+        //create slots that contains 3 columns
         slotMachine?.slots = Slots()
         slotMachine?.spinButton = SpinButton(frame)
         
+        //create button object for bet up/down/max and reset button
         slotMachine?.betUpButton = Button(frame)
         slotMachine?.betDownButton = Button(frame)
         slotMachine?.betMaxButton = Button(frame)
         slotMachine?.resetButton = Button(frame)
         
 
-
+        //add nodes to scene
         addChild(slotMachine!)
         addChild((slotMachine?.slots!)!)
         addChild(slotMachine!.spinButton!)
-        
         addChild(slotMachine!.betUpButton!)
         addChild(slotMachine!.betDownButton!)
         addChild(slotMachine!.betMaxButton!)
         addChild(slotMachine!.resetButton!)
         addChild(quitButton!)
         
+        //update button positions for bet up/down/max and reset button
         slotMachine?.updateButtonPosition()
 
 

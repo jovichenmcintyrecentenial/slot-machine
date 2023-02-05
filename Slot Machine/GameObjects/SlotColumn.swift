@@ -95,7 +95,7 @@ class SlotColumn{
                     nextIndex = 0
                 }
                 
-                //realign 3 currently visibile slot items on stop based on original postions
+                //realign 3 currently visibile slot items on stop based on original postions from the array
                 items[previousIndex].position.y = positions[2].y
                 item.position.y = -5
                 items[nextIndex].position.y = positions[4].y

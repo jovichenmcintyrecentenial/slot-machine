@@ -52,6 +52,7 @@ class SlotMachine:GameObject{
         }
     }
     
+    //update UI for labels and buttons state
     func updateUI(){
         //set labels value
         jackpotNode?.text = "$\(jackpot)"
@@ -62,6 +63,8 @@ class SlotMachine:GameObject{
         
     }
     
+    
+    //update spin button state base on playBet and playMoney amount
     func updateSpinButtonUI(){
         if(playerBet > playerMoney || playerMoney <= 0){
             spinButton?.setAsDisable()
@@ -72,10 +75,14 @@ class SlotMachine:GameObject{
     }
 
     init() {
+        
+        
         super.init(imageString: "slot-machine", initalScale: 0.75)
         
         zPosition = 10
         start()
+        
+        //create labels
         jackpotNode = GameFontObject(fontSize: 50)
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
@@ -99,10 +106,12 @@ class SlotMachine:GameObject{
     
     }
     
+    //function for trigger spinning of reels
     func spin(){
             resetMachine()
             reels()
             print(betLine)
+        //disable button on spin
             spinButton?.setAsDisable()
             slots?.spin()
             slots?.stop(slots: betLine,onComplete: { [weak self] in
@@ -178,6 +187,7 @@ class SlotMachine:GameObject{
 
     }
     
+    //do a restart on slot machince to initial state
     func restartGame(){
         playerBet = 10
         playerMoney = 1000
@@ -310,6 +320,7 @@ class SlotMachine:GameObject{
         }
     }
     
+    //increase bet amount by 10 as long as play balance is suffient
     func betUp(){
         if(playerMoney >= playerBet+10){
             playerBet += 10
@@ -317,23 +328,29 @@ class SlotMachine:GameObject{
         updateUI()
     }
     
+    //reduce bet amount by 10 if
     func betDown(){
+        //if player money some how got lower than bet then pressing this button
+        //make bet amount equal to the player amount
         if(playerMoney < playerBet){
             playerBet = playerMoney
         }
-        if(playerBet > 10){
+        else if(playerBet > 10){
             playerBet -= 10
         }
         updateUI()
 
     }
     
+    
+    //bet all money that player has
     func betMax(){
         playerBet = playerMoney
         updateUI()
 
     }
     
+    //message for when jackpot is won
     func showJackpotMessage(){
         let alert = UIAlertController(title: "🎉 Jackpot Winner 🎉", message: "Congratulation you won the Jackpot of $\(jackpot)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in

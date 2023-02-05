@@ -30,6 +30,7 @@ class Slots:GameObject{
         reset()
     }
     
+    //function use to position each slot items in correct location
     func adjustSlots(add:Bool = false){
         //offset column to negative space for first slot
         var colums:CGFloat = -1
@@ -43,9 +44,11 @@ class Slots:GameObject{
                 item.position.x = 117*colums
                 item.position.y = 95*rows
                 
+                //calculate where slot that has pass resetCutOffPoint should move to
                 if( index == slotColumn.items.count-1){
                     slotColumn.restPoint = 95*(rows+1)
                 }
+                //save a cut off point where slot item with the move to restpoint to similate continues spinning
                 else if(index == 0){
                     slotColumn.resetCutOffPoint = item.position.y
                 }
@@ -64,11 +67,12 @@ class Slots:GameObject{
         }
     }
     
+    //spin logic to start reel spin
     func spin(){
         isSpinning = true
         DispatchQueue.global().async { [weak self] in
 
-            //trigger spin
+            //trigger spin with a delay on each reels so they don't start trigger the same time
             if self != nil {
 
                 for slotColumn in self!.slotColums {
@@ -83,21 +87,27 @@ class Slots:GameObject{
         }
     }
     
+    
+    //function use to indicate to slotcolumn when to stop spinning and at what slot items
     func stop(slots:[Slot],onComplete:@escaping ()->Void){
         DispatchQueue.global().async { [weak self] in
        
 
             //trigger stop
             if self != nil {
+                //sleep to allow reel to spin for a awhile
                 usleep(1500_000)
+
+                //realign slots
                 self!.adjustSlots(add: false)
-
-
                 usleep(500_000)
+                
                 var index = 0
                 for slotColumn in self!.slotColums{
+                    //tell slot column to stop on a particular slot
                     slotColumn.stop(at: slots[index])
-
+                    
+                    //delayed effect to make reel stop one at a time
                     usleep(550_000)
 
                     index += 1
