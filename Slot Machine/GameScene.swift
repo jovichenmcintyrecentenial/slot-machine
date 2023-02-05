@@ -54,7 +54,7 @@ class GameScene: SKScene {
         if let touch = touches.first {
             let location = touch.location(in: self)
             let node = self.nodes(at: location).first
-            if node == slotMachine!.spinButton {
+            if node == slotMachine!.spinButton && slotMachine!.spinButton!.isEnabled {
                 // Perform your action
                 slotMachine?.spin()
             }

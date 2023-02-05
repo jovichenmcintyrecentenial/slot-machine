@@ -71,7 +71,7 @@ class Slots:GameObject{
 
                 for slotColumn in self!.slotColums {
                     slotColumn.stopSlot = nil
-                    slotColumn.verticalSpeed = -10
+                    slotColumn.verticalSpeed = -5
                     slotColumn.isSpinning = true
                     usleep(50_000)
 

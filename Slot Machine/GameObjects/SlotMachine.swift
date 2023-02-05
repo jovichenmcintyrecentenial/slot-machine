@@ -39,8 +39,8 @@ class SlotMachine:GameObject{
     func checkJackPot() {
         
         /* compare two random values */
-        var jackPotTry = Int.random(in: 0..<51)
-        var jackPotWin = Int.random(in: 0..<51)
+        let jackPotTry = Int.random(in: 0..<51)
+        let jackPotWin = Int.random(in: 0..<51)
         if (jackPotTry == jackPotWin) {
             playerMoney += jackpot
             jackpot = 1000
@@ -86,11 +86,14 @@ class SlotMachine:GameObject{
         resetMachine()
         reels()
         print(betLine)
+        spinButton?.setAsDisable()
         slots?.spin()
         slots?.stop(slots: betLine,onComplete: { [weak self] in
             if(self != nil){
                 self!.determineWinnings()
                 self!.updateLabels()
+                self!.spinButton?.setAsEnabled()
+
             }
         })
       
