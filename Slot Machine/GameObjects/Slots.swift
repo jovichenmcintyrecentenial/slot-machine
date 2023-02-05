@@ -103,8 +103,9 @@ class Slots:GameObject{
                     index += 1
                     
                 }
-                
-                onComplete()
+                DispatchQueue.main.async {
+                    onComplete()
+                }
                 self!.isSpinning = false
 
             }

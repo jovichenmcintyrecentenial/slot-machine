@@ -45,6 +45,8 @@ class SlotMachine:GameObject{
         let jackPotTry = Int.random(in: 0..<51)
         let jackPotWin = Int.random(in: 0..<51)
         if (jackPotTry == jackPotWin) {
+        
+            showJackpotMessage()
             playerMoney += jackpot
             jackpot = 1000
         }
@@ -317,7 +319,7 @@ class SlotMachine:GameObject{
     
     func betDown(){
         if(playerMoney < playerBet){
-            playerBet = playerMoney 
+            playerBet = playerMoney
         }
         if(playerBet > 10){
             playerBet -= 10
@@ -329,6 +331,18 @@ class SlotMachine:GameObject{
     func betMax(){
         playerBet = playerMoney
         updateUI()
+
+    }
+    
+    func showJackpotMessage(){
+        let alert = UIAlertController(title: "🎉 Jackpot Winner 🎉", message: "Congratulation you won the Jackpot of $\(jackpot)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            // do something when OK is tapped
+        }
+        alert.addAction(okAction)
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
 
     }
 }

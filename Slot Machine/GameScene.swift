@@ -11,6 +11,7 @@ import GameplayKit
 class GameScene: SKScene {
 
     var slotMachine:SlotMachine?
+    var quitButton:QuitButton?
 
 
     override func sceneDidLoad() {
@@ -18,6 +19,7 @@ class GameScene: SKScene {
         name = "GAME"
         backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
         slotMachine=SlotMachine()
+        quitButton = QuitButton(frame)
         
         slotMachine?.slots = Slots()
         slotMachine?.spinButton = SpinButton(frame)
@@ -37,6 +39,7 @@ class GameScene: SKScene {
         addChild(slotMachine!.betDownButton!)
         addChild(slotMachine!.betMaxButton!)
         addChild(slotMachine!.resetButton!)
+        addChild(quitButton!)
         
         slotMachine?.updateButtonPosition()
 
