@@ -20,10 +20,28 @@
 
 import GameplayKit
 import SpriteKit
+import RealmSwift
 
 
 class SlotMachine:GameObject{
-    var jackpot:Int = 5000
+    
+    
+    var jackpot: Int {
+       get {
+           return SlotMachineData.getData()!.jackpot!
+       }
+       set {
+         let data = SlotMachineData.getData()
+           let realm = try! Realm()
+           try! realm.write {
+               data?.jackpot = newValue
+           }
+         
+       }
+     }
+    
+    var highscore:Int = 0
+    
     var balanceNode:GameFontObject?
     var jackpotNode:GameFontObject?
     var betAmountNode:GameFontObject?
@@ -52,7 +70,7 @@ class SlotMachine:GameObject{
     var outCome = [0, 0, 0]
     
     /* Check to see if the player won the jackpot */
-    func checkJackPot() {
+    func checkJackPot(_ winnings:Int) {
         
         /* compare two random values */
         let jackPotTry = Int.random(in: 0..<51)
@@ -60,8 +78,13 @@ class SlotMachine:GameObject{
         if (jackPotTry == jackPotWin) {
         
             showJackpotMessage()
+            updateHighscore(winnings: winnings,jackpot: jackpot)
+
             playerMoney += jackpot
             jackpot = 1000
+        }
+        else{
+            updateHighscore(winnings: winnings,jackpot: 0)
         }
     }
     
@@ -277,7 +300,7 @@ class SlotMachine:GameObject{
                 winnings = playerBet * 1
             }
             playerMoney += winnings
-            checkJackPot()
+            checkJackPot(winnings)
         }
         else
         {
@@ -374,5 +397,34 @@ class SlotMachine:GameObject{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
 
+    }
+    
+    //message for when jackpot is won
+    func showHighScoreMessage(){
+        let alert = UIAlertController(title: "🎉 New Highscore 🎉", message: "Congratulation got a new hight score ", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            // do something when OK is tapped
+        }
+        alert.addAction(okAction)
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
+
+    }
+    
+    
+    func updateHighscore(winnings:Int,jackpot:Int = 0){
+        var newScore = winnings + jackpot
+        if(newScore > highscore){
+            highscore = newScore
+            if(jackpot == 0){
+                showHighScoreMessage()
+            }
+        }
+    }
+    
+    
+    func getData()->SlotMachineData{
+        return SlotMachineData.getData()!
     }
 }

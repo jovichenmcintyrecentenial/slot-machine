@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95BDBD6D29997C1E3B023656 /* Pods_Slot_Machine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB17DC9EA1348BB6BF57A654 /* Pods_Slot_Machine.framework */; };
 		98097137297DE5E500CD4803 /* SpinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98097136297DE5E500CD4803 /* SpinButton.swift */; };
 		9809713D297DF27E00CD4803 /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */; };
 		9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809713E297E01A600CD4803 /* GameFontObject.swift */; };
+		984AFB0229A29CE9006B93B3 /* SlotMachineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */; };
 		988E2764299055CD0091C3F2 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2763299055CD0091C3F2 /* Button.swift */; };
 		988E2766299068D60091C3F2 /* QuitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2765299068D60091C3F2 /* QuitButton.swift */; };
 		988EDB33297DC43500840289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB32297DC43500840289 /* AppDelegate.swift */; };
@@ -28,10 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F2C8A6B7C5F0104114DBABC /* Pods-Slot Machine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot Machine.release.xcconfig"; path = "Target Support Files/Pods-Slot Machine/Pods-Slot Machine.release.xcconfig"; sourceTree = "<group>"; };
 		98097136297DE5E500CD4803 /* SpinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButton.swift; sourceTree = "<group>"; };
 		9809713A297DEE6400CD4803 /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		9809713C297DF0AB00CD4803 /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9809713E297E01A600CD4803 /* GameFontObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFontObject.swift; sourceTree = "<group>"; };
+		984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineData.swift; sourceTree = "<group>"; };
 		988E2763299055CD0091C3F2 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		988E2765299068D60091C3F2 /* QuitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButton.swift; sourceTree = "<group>"; };
 		988EDB2F297DC43500840289 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,8 @@
 		988EDB51297DCD7500840289 /* Slots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slots.swift; sourceTree = "<group>"; };
 		988EDB53297DD2D000840289 /* SlotColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotColumn.swift; sourceTree = "<group>"; };
 		988EDB55297DD35800840289 /* SlotItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotItem.swift; sourceTree = "<group>"; };
+		CB17DC9EA1348BB6BF57A654 /* Pods_Slot_Machine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slot_Machine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BF728A2E598DDCA59C034D /* Pods-Slot Machine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot Machine.debug.xcconfig"; path = "Target Support Files/Pods-Slot Machine/Pods-Slot Machine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +61,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BDBD6D29997C1E3B023656 /* Pods_Slot_Machine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431A72DEBA6E2FDD06190E9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB17DC9EA1348BB6BF57A654 /* Pods_Slot_Machine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98097138297DEE5000CD4803 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +92,21 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		984AFB0029A29CA0006B93B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		988EDB26297DC43500840289 = {
 			isa = PBXGroup;
 			children = (
 				988EDB31297DC43500840289 /* Slot Machine */,
 				988EDB30297DC43500840289 /* Products */,
+				F8E8CBF103D9E7675916DB90 /* Pods */,
+				431A72DEBA6E2FDD06190E9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +121,7 @@
 		988EDB31297DC43500840289 /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				984AFB0029A29CA0006B93B3 /* Models */,
 				9809713C297DF0AB00CD4803 /* Slot-Machine-Info.plist */,
 				98097138297DEE5000CD4803 /* Assets */,
 				988EDB4A297DC5F800840289 /* GameObjects */,
@@ -135,6 +161,15 @@
 			path = GameObjects;
 			sourceTree = "<group>";
 		};
+		F8E8CBF103D9E7675916DB90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2BF728A2E598DDCA59C034D /* Pods-Slot Machine.debug.xcconfig */,
+				5F2C8A6B7C5F0104114DBABC /* Pods-Slot Machine.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 988EDB46297DC43600840289 /* Build configuration list for PBXNativeTarget "Slot Machine" */;
 			buildPhases = (
+				BD9D98E57F55AC920DCAA80D /* [CP] Check Pods Manifest.lock */,
 				988EDB2B297DC43500840289 /* Sources */,
 				988EDB2C297DC43500840289 /* Frameworks */,
 				988EDB2D297DC43500840289 /* Resources */,
+				E58FC0429F8851E606D0FE3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,7 +208,7 @@
 				};
 			};
 			buildConfigurationList = 988EDB2A297DC43500840289 /* Build configuration list for PBXProject "Slot Machine" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -203,6 +240,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BD9D98E57F55AC920DCAA80D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Slot Machine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E58FC0429F8851E606D0FE3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slot Machine/Pods-Slot Machine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slot Machine/Pods-Slot Machine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Slot Machine/Pods-Slot Machine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		988EDB2B297DC43500840289 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -215,6 +294,7 @@
 				988EDB54297DD2D000840289 /* SlotColumn.swift in Sources */,
 				988E2766299068D60091C3F2 /* QuitButton.swift in Sources */,
 				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
+				984AFB0229A29CE9006B93B3 /* SlotMachineData.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
 				988E2764299055CD0091C3F2 /* Button.swift in Sources */,
 				988EDB52297DCD7500840289 /* Slots.swift in Sources */,
@@ -362,6 +442,7 @@
 		};
 		988EDB47297DC43600840289 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2BF728A2E598DDCA59C034D /* Pods-Slot Machine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,8 +455,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,6 +472,7 @@
 		};
 		988EDB48297DC43600840289 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F2C8A6B7C5F0104114DBABC /* Pods-Slot Machine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,8 +485,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
