@@ -137,7 +137,7 @@ class SlotMachine:GameObject{
         jackpotNode = GameFontObject(fontSize: 50)
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
-        highscoreNode = GameFontObject(fontSize: 40)
+        highscoreNode = GameFontObject(fontSize: 45)
       
         updateUI()
         
@@ -197,7 +197,7 @@ class SlotMachine:GameObject{
 
                 
                 highscoreNode?.position.y = (sceneBounds!.height/2)+68
-                highscoreNode?.position.x = ((sceneBounds!.width/2) * -1)+sceneBounds!.width*0.20
+                highscoreNode?.position.x = ((sceneBounds!.width/2) * -1)+sceneBounds!.width*0.25
             
         }
     }

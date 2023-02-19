@@ -24,7 +24,8 @@ import GameplayKit
 class GameScene: SKScene {
 
     var slotMachine:SlotMachine?
-    var quitButton:QuitButton?
+    var quitButton:UIToolbarButton?
+    var helpButton:UIToolbarButton?
 
 
     override func sceneDidLoad() {
@@ -39,8 +40,12 @@ class GameScene: SKScene {
         slotMachine=SlotMachine()
         slotMachine?.sceneBounds = sceneBounds
         slotMachine?.updateHighscoreLabel()
+        
         //create quit button
-        quitButton = QuitButton(frame)
+        quitButton = UIToolbarButton(imageName: "quit" ,frame)
+        
+        //create quit button
+        helpButton = UIToolbarButton(imageName: "help" ,xOffset: -70,frame)
         
         //create slots that contains 3 columns
         slotMachine?.slots = Slots()
@@ -62,6 +67,7 @@ class GameScene: SKScene {
         addChild(slotMachine!.betMaxButton!)
         addChild(slotMachine!.resetButton!)
         addChild(quitButton!)
+        addChild(helpButton!)
         
         //update button positions for bet up/down/max and reset button
         slotMachine?.updateButtonPosition()
@@ -118,6 +124,9 @@ class GameScene: SKScene {
             if node == quitButton && !slotMachine!.slots!.isSpinning  {
                 // Perform your reset
                 exit(0);
+            }
+            if node == helpButton && !slotMachine!.slots!.isSpinning  {
+                Notifications.emit(value: .showHelp)
             }
         }
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }

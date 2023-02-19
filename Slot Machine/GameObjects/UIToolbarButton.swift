@@ -22,15 +22,16 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class QuitButton:GameObject{
+class UIToolbarButton:GameObject{
     
-    init(_ frame:CGRect) {
-        super.init(imageString: "quit", initalScale:0.75)
+    init(imageName:String,xOffset:CGFloat = 0,_ frame:CGRect) {
+        super.init(imageString: imageName, initalScale:0.75)
         
         start()
         //position spin button
         position.y = frame.height/2 * 0.85
         position.x = frame.width/2 * 0.70
+        position.x += xOffset 
         zPosition = 10000000
 
     }

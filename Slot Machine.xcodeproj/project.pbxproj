@@ -13,7 +13,7 @@
 		9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809713E297E01A600CD4803 /* GameFontObject.swift */; };
 		984AFB0229A29CE9006B93B3 /* SlotMachineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */; };
 		988E2764299055CD0091C3F2 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2763299055CD0091C3F2 /* Button.swift */; };
-		988E2766299068D60091C3F2 /* QuitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2765299068D60091C3F2 /* QuitButton.swift */; };
+		988E2766299068D60091C3F2 /* UIToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2765299068D60091C3F2 /* UIToolbarButton.swift */; };
 		988EDB33297DC43500840289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB32297DC43500840289 /* AppDelegate.swift */; };
 		988EDB35297DC43500840289 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 988EDB34297DC43500840289 /* GameScene.sks */; };
 		988EDB39297DC43500840289 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB38297DC43500840289 /* GameScene.swift */; };
@@ -27,6 +27,8 @@
 		988EDB52297DCD7500840289 /* Slots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB51297DCD7500840289 /* Slots.swift */; };
 		988EDB54297DD2D000840289 /* SlotColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB53297DD2D000840289 /* SlotColumn.swift */; };
 		988EDB56297DD35800840289 /* SlotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EDB55297DD35800840289 /* SlotItem.swift */; };
+		98BE866029A2C34900BA0621 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE865F29A2C34900BA0621 /* HelpViewController.swift */; };
+		98BE866229A2C4A300BA0621 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE866129A2C4A300BA0621 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,7 @@
 		9809713E297E01A600CD4803 /* GameFontObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFontObject.swift; sourceTree = "<group>"; };
 		984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineData.swift; sourceTree = "<group>"; };
 		988E2763299055CD0091C3F2 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		988E2765299068D60091C3F2 /* QuitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButton.swift; sourceTree = "<group>"; };
+		988E2765299068D60091C3F2 /* UIToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbarButton.swift; sourceTree = "<group>"; };
 		988EDB2F297DC43500840289 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		988EDB32297DC43500840289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988EDB34297DC43500840289 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		988EDB51297DCD7500840289 /* Slots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slots.swift; sourceTree = "<group>"; };
 		988EDB53297DD2D000840289 /* SlotColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotColumn.swift; sourceTree = "<group>"; };
 		988EDB55297DD35800840289 /* SlotItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotItem.swift; sourceTree = "<group>"; };
+		98BE865F29A2C34900BA0621 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		98BE866129A2C4A300BA0621 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		CB17DC9EA1348BB6BF57A654 /* Pods_Slot_Machine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slot_Machine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BF728A2E598DDCA59C034D /* Pods-Slot Machine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot Machine.debug.xcconfig"; path = "Target Support Files/Pods-Slot Machine/Pods-Slot Machine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				984AFB0129A29CE9006B93B3 /* SlotMachineData.swift */,
+				98BE866129A2C4A300BA0621 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				988EDB3C297DC43500840289 /* Main.storyboard */,
 				988EDB3F297DC43600840289 /* Assets.xcassets */,
 				988EDB41297DC43600840289 /* LaunchScreen.storyboard */,
+				98BE865F29A2C34900BA0621 /* HelpViewController.swift */,
 			);
 			path = "Slot Machine";
 			sourceTree = "<group>";
@@ -156,7 +162,7 @@
 				988EDB55297DD35800840289 /* SlotItem.swift */,
 				98097136297DE5E500CD4803 /* SpinButton.swift */,
 				988E2763299055CD0091C3F2 /* Button.swift */,
-				988E2765299068D60091C3F2 /* QuitButton.swift */,
+				988E2765299068D60091C3F2 /* UIToolbarButton.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -291,9 +297,11 @@
 				988EDB39297DC43500840289 /* GameScene.swift in Sources */,
 				988EDB3B297DC43500840289 /* GameViewController.swift in Sources */,
 				9809713F297E01A600CD4803 /* GameFontObject.swift in Sources */,
+				98BE866029A2C34900BA0621 /* HelpViewController.swift in Sources */,
 				988EDB54297DD2D000840289 /* SlotColumn.swift in Sources */,
-				988E2766299068D60091C3F2 /* QuitButton.swift in Sources */,
+				988E2766299068D60091C3F2 /* UIToolbarButton.swift in Sources */,
 				988EDB4E297DC63400840289 /* GameObjectProtocol.swift in Sources */,
+				98BE866229A2C4A300BA0621 /* Notifications.swift in Sources */,
 				984AFB0229A29CE9006B93B3 /* SlotMachineData.swift in Sources */,
 				988EDB33297DC43500840289 /* AppDelegate.swift in Sources */,
 				988E2764299055CD0091C3F2 /* Button.swift in Sources */,

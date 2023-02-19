@@ -23,10 +23,14 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
+    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //register obeserver for notifictions
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: Notifications.myNotification, object: nil)
 
         if let scene = GKScene(fileNamed: "GameScene") {
             
@@ -53,4 +57,27 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // remove all observers
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //handle notification send by app to control UI element in gameview controller
+    @objc func handleNotification(_ notification: Notification) {
+        // Handle the notification
+        if let userInfo = notification.userInfo {
+            let type = userInfo["key"] as? NotificationType
+            
+            if(type == .showHelp){
+                contentView.isHidden = false
+            }
+            else if(type == .closeHelp){
+                contentView.isHidden = true
+            }
+        }
+    }
+
 }
+
+
