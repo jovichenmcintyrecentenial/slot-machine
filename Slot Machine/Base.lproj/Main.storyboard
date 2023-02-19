@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSe-I5-FD5">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSe-I5-FD5">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="898"/>
                                 <connections>
                                     <segue destination="xqY-1u-WdW" kind="embed" id="9JB-rp-vR1"/>
