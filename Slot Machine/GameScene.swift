@@ -32,9 +32,13 @@ class GameScene: SKScene {
         name = "GAME"
         backgroundColor = UIColor(red: 21/255, green: 13/255, blue: 80/255,alpha: 1)
         
+        let sceneBounds = self.frame
+
+        
         //create slot machine button
         slotMachine=SlotMachine()
-        
+        slotMachine?.sceneBounds = sceneBounds
+        slotMachine?.updateHighscoreLabel()
         //create quit button
         quitButton = QuitButton(frame)
         

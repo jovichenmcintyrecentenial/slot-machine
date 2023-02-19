@@ -52,13 +52,11 @@ class SlotMachineData: Object {
             return personalInfObjects[0]
         }
         else{
-            var data = SlotMachineData()
+            let data = SlotMachineData()
             data.jackpot = 5000
             data.highscore = 0
             data.create()
             return data
         }
-        return nil
-        
     }
 }

@@ -25,7 +25,8 @@ import RealmSwift
 
 class SlotMachine:GameObject{
     
-    
+    var sceneBounds:CGRect?
+
     var jackpot: Int {
        get {
            return SlotMachineData.getData()!.jackpot!
@@ -40,9 +41,22 @@ class SlotMachine:GameObject{
        }
      }
     
-    var highscore:Int = 0
+    var highscore:Int {
+        get {
+            return SlotMachineData.getData()!.highscore!
+        }
+        set {
+          let data = SlotMachineData.getData()
+            let realm = try! Realm()
+            try! realm.write {
+                data?.highscore = newValue
+            }
+          
+        }
+      }
     
     var balanceNode:GameFontObject?
+    var highscoreNode:GameFontObject?
     var jackpotNode:GameFontObject?
     var betAmountNode:GameFontObject?
     var slots:Slots?
@@ -94,6 +108,7 @@ class SlotMachine:GameObject{
         jackpotNode?.text = "$\(jackpot)"
         balanceNode?.text = "BAL: $\(playerMoney)"
         betAmountNode?.text = "BET: $\(playerBet)"
+        highscoreNode?.text = "HIGHSCORE: \(highscore)"
         
         updateSpinButtonUI()
         
@@ -122,6 +137,7 @@ class SlotMachine:GameObject{
         jackpotNode = GameFontObject(fontSize: 50)
         balanceNode = GameFontObject(fontSize: 40)
         betAmountNode = GameFontObject(fontSize: 40)
+        highscoreNode = GameFontObject(fontSize: 40)
       
         updateUI()
         
@@ -129,6 +145,7 @@ class SlotMachine:GameObject{
         addChild(jackpotNode!)
         addChild(balanceNode!)
         addChild(betAmountNode!)
+        addChild(highscoreNode!)
         
 
         reset()
@@ -175,8 +192,19 @@ class SlotMachine:GameObject{
 
     }
     
+    func updateHighscoreLabel(){
+        if(sceneBounds != nil){
+
+                
+                highscoreNode?.position.y = (sceneBounds!.height/2)+68
+                highscoreNode?.position.x = ((sceneBounds!.width/2) * -1)+sceneBounds!.width*0.20
+            
+        }
+    }
+    
     override func reset() {
         zPosition = 100
+        
         //position labels on slot machine
         jackpotNode?.position.y = (jackpotNode!.position.y) + (texture!.size().height/2.0) - (texture!.size().height/4.2)
         
@@ -414,7 +442,7 @@ class SlotMachine:GameObject{
     
     
     func updateHighscore(winnings:Int,jackpot:Int = 0){
-        var newScore = winnings + jackpot
+        let newScore = winnings + jackpot
         if(newScore > highscore){
             highscore = newScore
             if(jackpot == 0){
