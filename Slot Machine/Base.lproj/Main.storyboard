@@ -55,11 +55,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="442" height="877"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyk-gc-Nkq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyk-gc-Nkq">
                                 <rect key="frame" x="20" y="59" width="402" height="784"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-lf-COv">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="3644.6666666666665"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="3415"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-EC-IgO">
                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="41"/>
@@ -92,13 +92,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAs-Hq-1mm">
-                                                <rect key="frame" x="0.0" y="41" width="402" height="55.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="41" width="402" height="41"/>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="35"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-o8-m5Q">
-                                                <rect key="frame" x="0.0" y="96.333333333333343" width="402" height="100"/>
+                                                <rect key="frame" x="0.0" y="82" width="402" height="100"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-jackpot" translatesAutoresizingMaskIntoConstraints="NO" id="hwX-ps-eml">
                                                         <rect key="frame" x="0.0" y="0.0" width="180" height="96"/>
@@ -116,21 +116,21 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-5t-lnm">
-                                                <rect key="frame" x="0.0" y="196.33333333333337" width="402" height="157.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="182" width="402" height="116.66666666666669"/>
                                                 <string key="text">Take a look at the jackpot window to see how much you can win. The jackpot amount goes up every time someone loses, have a random chance to win the jackpot for every win you get.</string>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXT-e7-fse" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="354" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="298.66666666666669" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="fAR-Qt-sjP"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-wp-Gaa">
-                                                <rect key="frame" x="0.0" y="384" width="402" height="195.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="328.66666666666669" width="402" height="195.33333333333331"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-bet-amount-buttons" translatesAutoresizingMaskIntoConstraints="NO" id="VDu-BW-2SO">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="195.33333333333334"/>
@@ -148,27 +148,27 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIG-Nd-Ojr" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="579.33333333333337" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="524" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="0ZX-UC-P6a"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the bet up/down/max button to change how much you want to bet. The more you bet, the more you can win." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-ej-Iys">
-                                                <rect key="frame" x="0.0" y="609.33333333333337" width="402" height="94.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="554" width="402" height="70"/>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBk-Ib-zW0" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="704" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="624" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="i1O-Ze-P9r"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCS-Ao-rr5">
-                                                <rect key="frame" x="0.0" y="734" width="402" height="82"/>
+                                                <rect key="frame" x="0.0" y="654" width="402" height="82"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-reset-button" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-HG-7w2">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="82"/>
@@ -186,20 +186,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieW-P1-8AM" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="816" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="736" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="dFK-dA-Zvd"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to restart the game, use the reset button to begin a new game." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC8-jS-YnC">
-                                                <rect key="frame" x="0.0" y="846" width="402" height="63"/>
+                                                <rect key="frame" x="0.0" y="766" width="402" height="46.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsM-pq-nws">
-                                                <rect key="frame" x="0.0" y="909" width="402" height="123"/>
+                                                <rect key="frame" x="0.0" y="812.66666666666663" width="402" height="123"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-balance" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-p9-fW0">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="123"/>
@@ -217,20 +217,20 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your balance in the window to see how much money you have left to play with." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9r9-V0-IjW">
-                                                <rect key="frame" x="0.0" y="1032" width="402" height="63"/>
+                                                <rect key="frame" x="0.0" y="935.66666666666663" width="402" height="46.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYR-ms-ma1" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="1095" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="982.33333333333326" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="YH6-cX-s6O"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-92-9Md">
-                                                <rect key="frame" x="0.0" y="1125" width="402" height="300"/>
+                                                <rect key="frame" x="0.0" y="1012.3333333333333" width="402" height="300"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-spin-bet-line" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-Zv-0I8">
                                                         <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="300"/>
@@ -248,41 +248,41 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4N-8K-DZm" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="1425" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="1312.3333333333333" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="SsX-ag-3q4"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meP-C8-bzS">
-                                                <rect key="frame" x="0.0" y="1455" width="402" height="157.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="1342.3333333333333" width="402" height="93.333333333333258"/>
                                                 <string key="text">When you're ready to play, hit the spin button. The machine will spin and if you get certain combinations of symbols on the bet-line, you may win some money. Good luck!</string>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edI-6F-hIN" userLabel="spacer">
-                                                <rect key="frame" x="0.0" y="1612.6666666666667" width="402" height="30"/>
+                                                <rect key="frame" x="0.0" y="1435.6666666666667" width="402" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="xfZ-ht-Wzy"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payout Combinations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsF-bR-V52">
-                                                <rect key="frame" x="0.0" y="1642.6666666666667" width="402" height="44.333333333333258"/>
+                                                <rect key="frame" x="0.0" y="1465.6666666666667" width="402" height="32.666666666666742"/>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5O-DD-8Sz">
-                                                <rect key="frame" x="0.0" y="1687" width="402" height="157.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="1498.3333333333333" width="402" height="116.66666666666674"/>
                                                 <string key="text">Below shows a list of valid combination and there payout, where “?” is any other symbol that is not a blank and “B” represents player bet amount, and these combination can be in any order</string>
                                                 <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-8I-3z4">
-                                                <rect key="frame" x="0.0" y="1844.666666666667" width="402" height="1800"/>
+                                                <rect key="frame" x="0.0" y="1615" width="402" height="1800"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-combinations" translatesAutoresizingMaskIntoConstraints="NO" id="lb5-ts-sIv">
                                                         <rect key="frame" x="0.0" y="0.0" width="402" height="1800"/>
