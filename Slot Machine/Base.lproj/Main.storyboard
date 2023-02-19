@@ -56,7 +56,7 @@
                                 <rect key="frame" x="20" y="59" width="402" height="784"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-lf-COv">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1855.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="2050"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAs-Hq-1mm">
                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="55.333333333333336"/>
@@ -64,8 +64,32 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-o8-m5Q">
+                                                <rect key="frame" x="0.0" y="55.333333333333329" width="402" height="99.999999999999986"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-jackpot" translatesAutoresizingMaskIntoConstraints="NO" id="hwX-ps-eml">
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="96"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="180" id="34r-nc-nL7"/>
+                                                            <constraint firstAttribute="width" secondItem="hwX-ps-eml" secondAttribute="height" multiplier="15:8" id="lnR-2w-VDQ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="hwX-ps-eml" firstAttribute="top" secondItem="NWf-o8-m5Q" secondAttribute="top" id="40k-KX-Grd"/>
+                                                    <constraint firstAttribute="height" constant="100" id="8E8-nW-aqw"/>
+                                                    <constraint firstItem="hwX-ps-eml" firstAttribute="leading" secondItem="NWf-o8-m5Q" secondAttribute="leading" id="IDd-oy-Klb"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a look at the jackpot window to see how much you can win. The jackpot amount goes up every time someone loses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-5t-lnm">
+                                                <rect key="frame" x="0.0" y="155.33333333333334" width="402" height="94.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Baloo-Regular" family="Baloo" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-8I-3z4">
-                                                <rect key="frame" x="0.0" y="55.333333333333371" width="402" height="1800"/>
+                                                <rect key="frame" x="0.0" y="250" width="402" height="1800"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tut-combinations" translatesAutoresizingMaskIntoConstraints="NO" id="lb5-ts-sIv">
                                                         <rect key="frame" x="0.0" y="0.0" width="402" height="1800"/>
@@ -90,6 +114,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mKo-lf-COv" secondAttribute="trailing" id="0CR-ba-0K1"/>
                                     <constraint firstItem="tzn-8I-3z4" firstAttribute="width" secondItem="Eyk-gc-Nkq" secondAttribute="width" id="LGf-2m-ePm"/>
+                                    <constraint firstItem="NWf-o8-m5Q" firstAttribute="width" secondItem="Eyk-gc-Nkq" secondAttribute="width" id="Zak-hr-dSN"/>
                                     <constraint firstAttribute="trailing" secondItem="mKo-lf-COv" secondAttribute="trailing" id="kBY-kg-F7Z"/>
                                     <constraint firstItem="mKo-lf-COv" firstAttribute="top" secondItem="Eyk-gc-Nkq" secondAttribute="top" id="kUA-ok-tPD"/>
                                     <constraint firstItem="mKo-lf-COv" firstAttribute="leading" secondItem="Eyk-gc-Nkq" secondAttribute="leading" id="oRE-eb-HOF"/>
@@ -115,6 +140,7 @@
     </scenes>
     <resources>
         <image name="tut-combinations" width="720" height="3243"/>
+        <image name="tut-jackpot" width="244" height="83"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
