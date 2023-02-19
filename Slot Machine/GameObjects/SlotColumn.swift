@@ -53,7 +53,6 @@ class SlotColumn{
         items.append(SlotItem(itemName: "grape",slot: Slot.grape))
         items.append(SlotItem(itemName: "strawberry",slot: Slot.strawberry))
         items.append(SlotItem(itemName: "orange",slot: Slot.orange))
-        items.append(SlotItem(itemName: "lemon",slot: Slot.lemon))
         items.append(SlotItem(itemName: "blank",slot: Slot.blank))
 
     }
