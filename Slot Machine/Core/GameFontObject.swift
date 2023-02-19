@@ -16,7 +16,7 @@
 //  https://github.com/jovichenmcintyrecentenial/slot-machine
 //
 //  DATE LAST MODIFIED:
-//  Feburay 5, 2022
+//  Feburay 19, 2022
 
 import Foundation
 import SpriteKit

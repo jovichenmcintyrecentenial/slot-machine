@@ -16,7 +16,7 @@
 //  https://github.com/jovichenmcintyrecentenial/slot-machine
 //
 //  DATE LAST MODIFIED:
-//  Feburay 5, 2022
+//  Feburay 19, 2022
 
 import GameplayKit
 import SpriteKit
@@ -27,6 +27,7 @@ class SlotMachine:GameObject{
     
     var sceneBounds:CGRect?
 
+    //add set and getter to interact with realm database
     var jackpot: Int {
        get {
            return SlotMachineData.getData()!.jackpot!
@@ -41,6 +42,7 @@ class SlotMachine:GameObject{
        }
      }
     
+    //added setters and getter to interact with realm database
     var highscore:Int {
         get {
             return SlotMachineData.getData()!.highscore!
@@ -427,7 +429,7 @@ class SlotMachine:GameObject{
 
     }
     
-    //message for when jackpot is won
+    //message for for new highscore
     func showHighScoreMessage(){
         let alert = UIAlertController(title: "🎉 New Highscore 🎉", message: "Congratulation got a new hight score ", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
@@ -441,6 +443,7 @@ class SlotMachine:GameObject{
     }
     
     
+    //update highscore amount this can include player win amount plus the jackpot amount if won
     func updateHighscore(winnings:Int,jackpot:Int = 0){
         let newScore = winnings + jackpot
         if(newScore > highscore){
